@@ -28,6 +28,11 @@ export CROSS_COMPILE=$TOOLCHAIN_PATH/aarch64-linux-android-4.9/bin/aarch64-linux
 export ARCH=arm64
 
 #
+## Local Version & Kernel Version
+#
+export CONFIG_LOCALVERSION="z-FireKernel_Rev.-3.5-FEE_"
+
+#
 ## For dtbo & dtbs compile
 #
 if [ "$2" == "do-overlay" ]; then
