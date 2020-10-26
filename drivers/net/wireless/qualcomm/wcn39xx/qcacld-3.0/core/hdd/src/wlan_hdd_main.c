@@ -14418,6 +14418,7 @@ static int __init hdd_module_init(void)
 #if defined (SEC_READ_MACADDR_SYSFS) || defined (SEC_WRITE_VERSION_IN_SYSFS) || defined (SEC_WRITE_SOFTAP_INFO_IN_SYSFS) || defined (SEC_CONFIG_PSM_SYSFS) || defined (SEC_WRITE_ANT_GPIO_INFO_IN_SYSFS)
 	sec_sysfs_create();
 #endif /* SEC_READ_MACADDR_SYSFS || SEC_WRITE_VERSION_IN_SYSFS || SEC_WRITE_SOFTAP_INFO_IN_SYSFS || SEC_CONFIG_PSM_SYSFS || SEC_WRITE_ANT_GPIO_INFO_IN_SYSFS */
+	hdd_driver_load();
 	return ret;
 }
 #endif
