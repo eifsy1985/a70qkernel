@@ -1288,10 +1288,10 @@ err_:
     if (dev->rd_queue_buf)
 	vfree(dev->rd_queue_buf);
 
-	_conn_gadget_dev = NULL;
-	kfree(dev);
-	CONN_GADGET_ERR("conn_gadget gadget driver failed to initialize\n");
-	return ret;
+		_conn_gadget_dev = NULL;
+		kfree(dev);
+		CONN_GADGET_ERR("conn_gadget gadget driver failed to initialize\n");
+		return ret;
 }
 
 static void conn_gadget_cleanup(void)
