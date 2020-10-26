@@ -13,6 +13,7 @@ TOOLCHAIN_PATH=/home/$USER
 BINARIES_OUT_PATH=out/arch/arm64/boot
 COMPLETE_OUT_PATH=$KERNEL_PATH/$BINARIES_OUT_PATH
 DEFCONFIG=a70q_eur_open_defconfig
+CLANG_REV_VER=clang-r383902b
 
 #
 ##For separated GCC & Clang Path
@@ -58,7 +59,7 @@ fi
 ## Types, paths, and more etc.
 #
 BUILD_CROSS_COMPILE=$TOOLCHAIN_PATH/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-KERNEL_LLVM_BIN=$TOOLCHAIN_PATH/clang-r377782d/bin/clang
+KERNEL_LLVM_BIN=$TOOLCHAIN_PATH/$CLANG_REV_VER/bin/clang
 CLANG_TRIPLE=aarch64-linux-gnu-
 
 make -C $(pwd) O=$(pwd)/out ARCH=arm64 CROSS_COMPILE=$BUILD_CROSS_COMPILE CC=$KERNEL_LLVM_BIN CLANG_TRIPLE=$CLANG_TRIPLE $DEFCONFIG
@@ -71,6 +72,6 @@ fi
 #
 ## Copy Image.gz-dtb into anykernel3 folder [WIP]
 #
-#fi [ "$3" == "do-copy" ]; then
-#	cp $COMPLETE_OUT_PATH/Image.gz-dtb AnyKernel3/Image.gz-dtb
-#if
+fi [ "$2" == "do-copy" ]; then
+	cp $COMPLETE_OUT_PATH/Image.gz-dtb AnyKernel3/Image.gz-dtb
+if
