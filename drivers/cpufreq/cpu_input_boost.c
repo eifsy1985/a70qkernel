@@ -68,6 +68,9 @@ module_param(cpu_freq_idle_prime, uint, 0644);
 module_param(input_boost_duration, short, 0644);
 module_param(wake_boost_duration, short, 0644);
 
+module_param(dynamic_stune_boost, short, 0644);
+module_param(dynamic_sched_boost, bool, 0644);
+
 unsigned long last_input_time;
 
 enum {
